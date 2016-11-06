@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 8 Working Document - JavaScript Dom - Form Elements</title>
+        <meta charset="utf-8">
+        <style>
+            .error{
+                background-color: #FC5347;
+            }
+            .error2{
+                background-color: yellow;
+            }
+            .HiddenMessage{
+               color: #FC5347;
+            }
+
+        </style>
+        <script>
+           function myfunc(){
+              document.getElementById("firstname").className = "error";
+           }
+           function myfunc2(){
+              document.getElementById("firstname").className = "error2";
+           }
+           function myfunc3(){
+              document.getElementById("lastname").select();
+           }
+           function myfunc4(x){
+
+              if(x ==1){
+                 document.getElementById("email").focus();
+              }
+              if(x==2){
+                 document.getElementById("email").focus();
+                 document.getElementById("email").value="My Email";
+                 var chk = document.getElementById("email").value;
+                 if(chk == "My Email"){
+                   document.getElementById("mycheckbox").checked = true;
+                 }
+              }
+           }
+           function myfunc5(chk){
+              if(chk == 1){
+                 document.getElementById("myhiddenmessage").innerHTML = "Check out my hidden message";
+                 document.getElementById("myhiddenmessage").hidden = false;
+              }else{
+                 document.getElementById("myhiddenmessage").innerHTML = "";
+                 document.getElementById("myhiddenmessage").hidden = true;
+              }
+           }
+
+
+
+        </script>
+     </head>
+
+     <body>
+     <p>&nbsp;</p>
+     <div id="myhiddenmessage" class="HiddenMessage" hidden></div>
+     <form action="process.php" method="post">
+     <table border="1">
+        <tr>
+           <td>First Name</td>
+           <td><input type="text" name="firstname" id="firstname" value="" class="HiddenMessage"></td>
+        </tr>
+        <tr>
+           <td>Last Name</td>
+           <td><input type="text" name="lastname" id="lastname" value="Freeman"></td>
+        </tr>
+        <tr>
+           <td>Email</td>
+           <td><input type="text" name="email" id="email" value=""></td>
+        </tr>
+        <tr>
+           <td colspan="2"><input type="button" onclick="myfunc()" value="Watch my First Name text box"></td>
+        </tr>
+        <tr>
+           <td colspan="2"><input type="button" onclick="myfunc2()" value="Watch my First Name text box again"></td>
+        </tr>
+        <tr>
+           <td colspan="2"><input type="button" onclick="myfunc3()" value="Watch my Last Name text box"></td>
+        </tr>
+        <tr>
+           <td colspan="2"><input type="button" onclick="myfunc4(1)" value="Watch my Email text box again"> <input type="button" onclick="myfunc4(2)" value="Show"></td>
+        </tr>
+        <tr>
+           <td colspan="2"><input type="button" onclick="myfunc5(1)" value="Hidden Message Magic"> <input type="button" onclick="myfunc5(2)" value="Hide"></td>
+        </tr>
+        <tr>
+           <td colspan="2"><hr width="100%"></td>
+        </tr>
+        <tr>
+           <td><input type="checkbox" value="1" id="mycheckbox"></td>
+           <td>I really want this checked</td>
+        </tr>
+     </table>
+     </form>

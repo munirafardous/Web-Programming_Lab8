@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Week 8 Working Document - JavaScript DOM</title>
+	</head>
+	<body>
+
+    <script>
+       document.write(document.title); //display the title of this page
+
+       document.title = "Lets call it Week 9 - Intro to PHP"; //set a value for the document title
+       document.write("<br/><br/>" + document.title);// display the new title
+
+       document.write("<br/><br/><div> The URL value is " + document.URL + "</div>"); // display the URL value
+
+       function myfunc()
+       {//control the content between the paragraph dynamically.
+          pnode = document.getElementsByTagName('p');
+          pnode[0].innerHTML = 'See ya later Line 1';
+          pnode[4].innerHTML = 'This is my line 5';
+          pnode[1].innerHTML = 'The new number two';
+       }
+   </script>
+
+   <p></p>
+   <p></p>
+   <p></p>
+   <p></p>
+   <p></p>
+   <br/><br/>
+   <input type="button" id="test" value="Change the Value" onclick="myfunc()">
+</body>
+</html>
+
+<script>
+      var node;
+      node = document.getElementsByTagName('p');
+      //alert(node.length);
+      var x = 0;
+      for (var i = 0; i<=node.length-1; i++) {
+         x++;
+        node[i].innerHTML = 'Here is line ' + x;
+      }
+
+</script>

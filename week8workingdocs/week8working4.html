@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Week 8 Working Document - JavaScript Arrays</title>
+   <script>
+      //assign 4 teams to the array
+      var teamlist = new Array("Ottawa Senators","Toronto Maple Laughs", "Montreal Canadiens", "Calgary Flames");
+   </script>
+</head>
+
+<body>
+<script>
+   //display the length of our array
+   document.write("<p>The team list has " + teamlist.length + " teams in it.</p>");
+</script>
+
+The second team in the list is <b><script>document.write(teamlist[1]);</script></b>
+
+<script>
+   //add the Jets to the array
+   teamlist.push("Winnipeg Jets");
+   //assign the new length
+   var len = teamlist.length;
+   //display the new length
+   document.write("<p>Now the team list has " + len + " teams in it.</p>");
+
+   var idx = len-1; //Get the last element in the array
+   document.write("<p>The last team added was the <b>" + teamlist[idx] + "</b></p>");
+
+   //assign 2 teams to the new array
+   var teamlist2 = new Array("Vancouver Canucks","Quebec Nordiques?");
+   //display the length
+   document.write("<p>The second team list has " + teamlist2.length + " teams in it.</p>");
+   //display the first team in the 2nd array
+   document.write("<p>The firt team in the second list is <b>" + teamlist2[0] + "</b></p>");
+
+   //concat both team list together
+   var fullteamlist = teamlist.concat(teamlist2);
+   document.write("<p>After joining both lists we now have " + fullteamlist.length + " teams.</p>");
+</script>
+
+<h2>Team List Before Sorting Alpha</h2>
+<script>
+   //display all the teams
+   var nm = 0;
+   for(x=0;x<fullteamlist.length;x++){
+      nm++;
+      document.write(nm + ". " + fullteamlist[x] + "<br/>");
+   }
+</script>
+<p>&nbsp</p>
+
+<h2>Team List After Sorting Alpha</h2>
+<script>
+   //sort the full array and display the new teams
+   fullteamlist.sort();
+   var nm = 0;
+   for(x=0;x<fullteamlist.length;x++){
+      nm++;
+      document.write(nm + ". " + fullteamlist[x] + "<br/>");
+   }
+</script>
+
+
+</body>
+</html>
+

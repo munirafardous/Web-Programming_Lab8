@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 8 Working Document - JavaScript ChildNodes and attributes</title>
+    </head>
+<body>
+<p id="demo">Click the button get info about the body element's child nodes</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p>Check out my image below</p>
+<img src="shot.jpg" width="350"/>
+
+<script>
+var a = 5;
+var b = "5";
+var c = a + b;
+alert(c);
+function myFunction()
+{
+   var txt="";
+   //assign all childNodes of the body element
+   var c=document.body.childNodes;
+   alert (c.length);
+
+   //loop through all the childNodes
+   for (i=0; i<c.length; i++)
+     {
+     txt=txt + c[i].nodeName + "<br />";
+     };
+   //assign node using the getElementById
+   var x=document.getElementById("demo");
+   //dynamically display HTML
+   x.innerHTML=txt;
+
+   //assign number of images in the document
+   var x = document.images.length;
+   alert(x);
+   //alert the first image width attribute
+   alert(document.images[0].width);
+   //dynamically assign a width that the first image in the document.
+   document.images[0].width = 100;
+
+}
+</script>
+
+<p><strong>Note:</strong> Whitespace inside elements is considered as text, and text
+is considered as nodes.</p>
+
+
+</body></html>

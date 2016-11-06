@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1</title>
+        <meta charset="utf-8">
+        <script>
+          function checkForm(myForm){
+            if(myForm.firstName.value == ''){
+                alert("First name cannot be blank.");
+                myForm.firstName.focus();
+                return false;
+            }
+            if(myForm.lastName.value == ''){
+                alert("Last Name cannot be blank.");
+                myForm.lastName.focus();
+                return false;
+            }
+            if(myForm.address.value == ''){
+                alert("Address caanot be blank.");
+                myForm.address.focus();
+                return false;
+            }
+            if(myForm.city.value == ''){
+                alert("City cannot be blank.");
+                myForm.city.focus();
+                return false;
+            }
+            if(myForm.postalCode.value == ''){
+                alert("Postal code cannot be blank");
+                myForm.postalCode.focus();
+                return false;
+            }
+             if(myForm.postalCode.value.length<6){
+                alert("Postal code must be six digits long.");
+                myForm.postalCode.focus();
+                return false;
+            }
+             if(myForm.widget1qty.value  < 0 ){
+                alert("Quantity cannot be negative.");
+                myForm.widget1qty.focus();
+                return false;
+             }
+              if(myForm.widget2qty.value  < 0 ){
+                alert("Quantity cannot be negative.");
+                myForm.widget2qty.focus();
+                return false;
+             }
+             if(myForm.widget3qty.value  < 0 ){
+                alert("Quantity cannot be negative.");
+                myForm.widget3qty.focus();
+                return false;
+             }
+             //* Atleast one otem must be ordered.*//
+            
+            /* if(myForm.allWidgets.value) == 0){
+                var allWidgets = (myForm.widget1qty.value + myForm.widget2qty.value + myForm.widget3qty.value)
+                alert("Please order atleast one item.");
+                myForm.allWidgets.focus();
+                return false;
+             }*/
+              
+
+            
+         
+
+            return true;
+          }
+          
+
+          
+        </script>
+    </head>
+<body>
+     <h2>Order Form</h2>
+<form name="myForm" method="POST" onsubmit="return checkForm(myForm)" action="processForm.html" >
+<table>
+            <tr>
+                <th colspan="2">Personal Information</th>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="firstName" id="firstName" size="30"></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="lastName" id="lastName" size="30"></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="address" id="address" size="30"></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input type="text" name="city" id="city" size="30"></td>
+            </tr>
+            <tr>
+                <td>Province:</td>
+                <td><select name="province" id="province" size="1">
+                        <option enabled>Select a province</option>
+                        <option value="BC">British Columbia</option>
+                        <option value="AB">Alberta</option>
+                        <option value="SK">Saskatchewan</option>
+                        <option value="MB">Manitoba</option>
+                        <option value="ON">Ontario</option>
+                        <option value="QC">Québec</option>
+                        <option value="NB">New Brunswick</option>
+                        <option value="NS">Nova Scotia</option>
+                        <option value="PE">Prince Edward Island</option>
+                        <option value="NF">Newfoundland</option>
+                        <option value="YK">Yukon</option>
+                        <option value="NWT">Northwest Territories</option>
+                        <option value="NU">Nunavut</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Postal Code:</td>
+                <td><input type="text" name="postalCode" id="postalCode"  maxlength="6"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Order Information</th>
+            </tr>
+            <tr>
+                <td rowspan="3">Select your products:<br>
+                    <span id="productError" class="errorMessage" hidden></span></td>
+                <td>Widget #1&nbsp;
+                    <input type="text" name="widget1qty" id="widget1qty" size="1" value="0">Qty @ <strong>$5.00/ea</strong></td>
+            </tr>
+            <tr>
+                <td>Widget #2&nbsp;
+                    <input type="text" name="widget2qty" id="widget2qty" size="1" value="0">Qty @ <strong>$15.00/ea</strong></td>
+            </tr>
+            <tr>
+                <td>Widget #3&nbsp;
+                    <input type="text" name="widget3qty" id="widget3qty" size="1" value="0">Qty @ <strong>$25.00/ea</strong></td>
+            </tr>
+            <tr>
+                <td rowspan="3">Shipping Type:</td>
+                <td>Standard ($5.00)<input type="radio" name="shippingType" id="shippingTypeStandard" value="Standard" checked></td>
+
+            </tr>
+            <tr>
+                <td>Express ($10.00)<input type="radio" name="shippingType" id="shippingTypeExpress" value="Express"></td>
+            </tr>
+            <tr>
+                <td>Overnight ($20.00)<input type="radio" name="shippingType" id="shippingTypeOvernight" value="Overnight"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Submit Order</th>
+            </tr>
+            <tr>
+                <td><input type="submit" name="btnSubmit" id="btnSubmit" value="Submit Order"></td>
+                <td><input type="reset" name="btnReset" id="btnReset" value="Reset Form"></td>
+            </tr>
+
+</form>
+</body>
+</html>
+
+
+
+ 
